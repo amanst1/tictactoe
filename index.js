@@ -37,7 +37,7 @@ function clicked(id) {
 }
 
 //updates ui if the game has a winner
-function updateVals() {
+function endGame() {
     winner = lastTurn
     containerDiv.innerHTML = `<h1>${winner === "X"? "Player 1 Wins": "Player 2 Wins"} </h1> `
 }
@@ -45,21 +45,21 @@ function updateVals() {
 //checks existence of a winner after every move 
 function winCondition() {
     if(boxesValues[0] !== "" && boxesValues[0] === boxesValues[1] && boxesValues[1] === boxesValues[2]){
-        updateVals()
+        endGame()
     } else if (boxesValues[3] !== "" && boxesValues[3] === boxesValues[4] && boxesValues[4] === boxesValues[5]) {
-        updateVals()
+        endGame()
     } else if (boxesValues[6] !== "" && boxesValues[6] === boxesValues[7] && boxesValues[7] === boxesValues[8]){
-        updateVals()
+        endGame()
     } else if (boxesValues[0] !== "" && boxesValues[0] === boxesValues[3] && boxesValues[3] === boxesValues[6]){
-        updateVals()
+        endGame()
     } else if (boxesValues[1] !== "" && boxesValues[1] === boxesValues[4] && boxesValues[4] === boxesValues[7]){
-        updateVals()
+        endGame()
     } else if (boxesValues[2] !== "" && boxesValues[2] === boxesValues[5] && boxesValues[5] === boxesValues[8]){
-        updateVals()
+        endGame()
     } else if(boxesValues[0] !== "" && boxesValues[0] === boxesValues[4] && boxesValues[4] === boxesValues[8]){
-        updateVals()
+        endGame()
     } else if (boxesValues[2] !== "" && boxesValues[2] === boxesValues[4] && boxesValues[4] === boxesValues[6]){
-        updateVals()
+        endGame()
     } else if (moveCounter === 9) {
         moveCounter = 0
         containerDiv.innerHTML = `<h1>DRAW</h1> `
