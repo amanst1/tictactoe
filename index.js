@@ -5,6 +5,7 @@ let moveCounter = 0
 let winner = ""
 let containerDiv = document.querySelector(".container")
 
+// renders boxes array to div elements
 let boxesHtml = boxes.map((box) => {
     return `<div class="box"  id=${box} onclick="clicked(${box})" >
                
